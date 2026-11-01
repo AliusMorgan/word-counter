@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' https://*.googlesyndication.com https://*.google.com https://*.gstatic.com https://*.googleadservices.com https://*.doubleclick.net https://*.adtrafficquality.google; frame-src https://*.googlesyndication.com https://*.google.com https://*.gstatic.com https://*.googleadservices.com https://*.doubleclick.net https://*.adtrafficquality.google; img-src data: https:; connect-src https://*.googlesyndication.com https://*.google.com https://*.gstatic.com https://*.googleadservices.com https://*.doubleclick.net https://*.adtrafficquality.google; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<!-- بعد قبول حسابك في AdSense الصق الكود الذي تعطيك إياه Google هنا (مثال):
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<title>Word Counter – Free Online Word &amp; Character Count Tool | عداد الكلمات والحروف</title>
+<meta name="description" content="Free online word counter: count words, characters, sentences and paragraphs instantly. عداد كلمات وحروف مجاني لحساب الكلمات والجمل والفقرات فورًا.">
+<meta name="keywords" content="word counter, character counter, word count, عداد الكلمات, عداد الحروف, حساب الكلمات">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Word Counter | عداد الكلمات","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","inLanguage":["en","ar"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+:root{--bg:#f4f7f6;--card:#fff;--primary:#2563eb;--primary-h:#1d4ed8;--text:#1f2937;--muted:#6b7280;--border:#e5e7eb;--danger:#ef4444}
+@media (prefers-color-scheme:dark){:root{--bg:#0f172a;--card:#1e293b;--text:#f1f5f9;--muted:#94a3b8;--border:#334155}}
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Tahoma,sans-serif}
+body{background:var(--bg);color:var(--text);padding:20px;line-height:1.5}
+.container{max-width:1200px;margin:0 auto}
+header{text-align:center;margin-bottom:25px;position:relative}
+header h1{font-size:1.8rem;margin-bottom:5px}
+header p{color:var(--muted);font-size:.95rem}
+.lang{position:absolute;top:0;inset-inline-end:0}
+.hero,.editor,.panel{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px}
+.hero{display:flex;justify-content:space-around;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.hero div{text-align:center}
+.hero .val{font-size:1.8rem;font-weight:700;color:var(--primary);display:block}
+.hero .lbl{font-size:.85rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 300px;gap:20px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid var(--border)}
+.btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;cursor:pointer;font-size:.85rem}
+.btn:hover{background:var(--border)}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn-primary:hover{background:var(--primary-h)}
+.btn-danger{color:var(--danger)}
+textarea{width:100%;height:350px;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:15px;font-size:1rem;line-height:1.6;outline:none;resize:vertical}
+textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+.sidebar{display:flex;flex-direction:column;gap:20px}
+.panel h2{font-size:1rem;margin-bottom:15px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+ul{list-style:none}
+.stat{display:flex;justify-content:space-between;padding:8px 0;font-size:.9rem}
+.stat .val{font-weight:600;color:var(--primary)}
+.d-row{display:flex;justify-content:space-between;font-size:.85rem;padding-top:6px}
+.bar{height:4px;background:var(--border);border-radius:2px;margin-top:3px;overflow:hidden}
+.fill{height:100%;background:var(--primary)}
+.empty{color:var(--muted);font-size:.85rem}
+.content{margin-top:20px}.content .panel{margin-bottom:20px;line-height:1.8}.content h2{font-size:1.15rem}.content h3{font-size:1rem;margin:14px 0 4px}.content p{color:var(--text);font-size:.95rem}[hidden]{display:none!important}
+footer{text-align:center;margin-top:30px;font-size:.85rem;color:var(--muted)}
+footer a{color:var(--primary);margin:0 10px;text-decoration:none}
+@media (max-width:500px){.lang{position:static;margin-bottom:10px}header h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <button class="btn lang" id="langBtn" type="button"></button>
+    <h1 data-i="h1"></h1>
+    <p data-i="sub"></p>
+  </header>
+
+  <section class="hero">
+    <div><span class="val" id="w">0</span><span class="lbl" data-i="words"></span></div>
+    <div><span class="val" id="c">0</span><span class="lbl" data-i="chars"></span></div>
+    <div><span class="val" id="cn">0</span><span class="lbl" data-i="charsNo"></span></div>
+  </section>
+
+  <div class="grid">
+    <section class="editor">
+      <div class="toolbar">
+        <button class="btn btn-primary" id="bPaste" type="button" data-i="paste"></button>
+        <button class="btn" id="bCopy" type="button" data-i="copy"></button>
+        <button class="btn" id="bUp" type="button">UPPER</button>
+        <button class="btn" id="bLow" type="button">lower</button>
+        <button class="btn" id="bSen" type="button">Sentence</button>
+        <button class="btn" id="bDl" type="button" data-i="dl"></button>
+        <button class="btn btn-danger" id="bClr" type="button" data-i="clear"></button>
+      </div>
+      <textarea id="t" maxlength="1000000" data-ph="ph"></textarea>
+    </section>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <h2 data-i="details"></h2>
+        <ul>
+          <li class="stat"><span data-i="sent"></span><span class="val" id="s">0</span></li>
+          <li class="stat"><span data-i="para"></span><span class="val" id="p">0</span></li>
+          <li class="stat"><span data-i="read"></span><span class="val" id="r"></span></li>
+          <li class="stat"><span data-i="speak"></span><span class="val" id="sp"></span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2 data-i="top"></h2>
+        <ul id="dens"></ul>
+      </div>
+    </aside>
+  </div>
+  <section class="content"><div data-l="en"><div class="panel"><h2>How to use the word counter</h2>
+<p>Type or paste your text into the box and the numbers update instantly: words, characters with and without spaces, sentences, paragraphs, reading time and speaking time. Nothing is uploaded; everything is calculated inside your browser, so it is safe for private drafts.</p>
+<p>The side panel lists your five most repeated words, which helps you spot overused terms. The toolbar can change letter case (for English text), copy or download your text, and clear the box.</p></div>
+<div class="panel"><h2>Frequently asked questions</h2>
+<h3>How are words counted?</h3><p>A word is any run of Arabic or Latin letters or digits separated by spaces or punctuation. Hyphenated terms count as separate words.</p>
+<h3>How is reading time estimated?</h3><p>We assume about 275 words per minute for silent reading and 180 words per minute for speaking aloud. Real speed varies by person and text difficulty, so treat it as an estimate.</p>
+<h3>Does it support Arabic?</h3><p>Yes. Arabic and English are both supported, and the page switches language and direction automatically based on your device.</p>
+<h3>Is my text saved or sent anywhere?</h3><p>No. Your text stays on your device. See our <a href="privacy.html">Privacy Policy</a>.</p>
+<h3>Is there a text length limit?</h3><p>The box accepts up to one million characters, which is far more than a typical book chapter.</p></div><div class="panel"><h2>Articles</h2>
+<article><h3>Characters with spaces or without: which one matters?</h3>
+<p>Most tools show two character totals, and each answers a different question. The count with spaces is the one used by limits on typed text, such as text messages, social media posts and form fields, because every space takes up room. The count without spaces is closer to the amount of actual writing and is sometimes used to measure or price work such as translation, though rules differ between clients, so always confirm which method is expected.</p>
+<p>Word counts are the usual measure for essays, articles and reports. If an assignment gives a limit in words, use the word total and ignore characters. If it gives a limit in characters, check whether spaces are included before you start trimming.</p></article>
+<article><h3>How many words do you need for a 5-minute speech?</h3>
+<p>Most people speak comfortably at about 130 to 150 words per minute, which means a 5-minute talk needs roughly 650 to 750 words. Fast speakers can reach 180 words per minute, or about 900 words in five minutes. Pauses, slides, jokes and audience reactions all slow you down, so plan on the lower end.</p>
+<p>Paste your script into the counter and check the speaking time, then read it aloud once with a timer. If the real time differs from the estimate, note the difference and adjust your target length. Short sentences are easier to deliver and easier for listeners to follow.</p></article>
+<article><h3>How to spot overused words in your writing</h3>
+<p>Repetition is one of the most common problems in drafts, and it is hard to notice in your own text. Paste your draft into the counter and look at the most frequent words in the side panel. Ignore small connecting words and focus on content words that appear again and again, such as "important", "thing" or "use".</p>
+<p>Replace repeats with more precise words, or restructure the sentence so the repeated word is not needed. Then read the text aloud: awkward repetition is easier to hear than to see. Keep repeats on purpose only when they are key terms that must stay consistent, such as a technical term.</p></article></div></div><div data-l="ar" hidden><div class="panel"><h2>كيف تستخدم عداد الكلمات</h2>
+<p>اكتب نصك أو الصقه في المربع وستتحدث الأرقام فورًا: الكلمات، والحروف مع المسافات وبدونها، والجمل، والفقرات، ووقت القراءة ووقت الإلقاء. لا يُرفع شيء إلى أي خادم، فكل الحسابات تتم داخل متصفحك، ولذلك فهو مناسب للمسودات الخاصة.</p>
+<p>تعرض اللوحة الجانبية أكثر خمس كلمات تكرارًا، وهذا يساعدك على اكتشاف الكلمات المكررة أكثر من اللازم. ويتيح شريط الأدوات تغيير حالة الأحرف (للنص الإنجليزي) ونسخ النص أو تنزيله ومسح المربع.</p></div>
+<div class="panel"><h2>الأسئلة الشائعة</h2>
+<h3>كيف تُحسب الكلمات؟</h3><p>الكلمة هي أي تتابع من الحروف العربية أو اللاتينية أو الأرقام تفصله مسافات أو علامات ترقيم. والكلمات المفصولة بشرطة تُحسب كلمتين.</p>
+<h3>كيف يُقدَّر وقت القراءة؟</h3><p>نفترض نحو 275 كلمة في الدقيقة للقراءة الصامتة و180 كلمة في الدقيقة للإلقاء بصوت مسموع. تختلف السرعة الفعلية من شخص لآخر ومن نص لآخر، فاعتبر الناتج تقديرًا.</p>
+<h3>هل يدعم اللغة العربية؟</h3><p>نعم، يدعم العربية والإنجليزية، وتتغير لغة الصفحة واتجاهها تلقائيًا بحسب جهازك.</p>
+<h3>هل يُحفظ نصي أو يُرسل إلى مكان ما؟</h3><p>لا، نصك يبقى على جهازك. اطلع على <a href="privacy.html">سياسة الخصوصية</a>.</p>
+<h3>هل هناك حد لطول النص؟</h3><p>يقبل المربع حتى مليون حرف، وهو أكبر بكثير من فصل كتاب عادي.</p></div><div class="panel"><h2>مقالات</h2>
+<article><h3>الحروف مع المسافات أم بدونها: أيهما يهمّ؟</h3>
+<p>تعرض معظم الأدوات مجموعين للحروف، ولكل منهما سؤال مختلف. العدّ مع المسافات هو المعتمد في حدود النص المكتوب، كالرسائل النصية ومنشورات التواصل وحقول النماذج، لأن كل مسافة تأخذ حيّزًا. أما العدّ بدون مسافات فأقرب إلى حجم الكتابة الفعلي، ويُستخدم أحيانًا في قياس بعض الأعمال وتسعيرها كالترجمة، لكن القواعد تختلف بين العملاء، فتأكد دائمًا من الطريقة المطلوبة.</p>
+<p>أما عدد الكلمات فهو المقياس المعتاد للمقالات والأبحاث والتقارير. إذا حُدّد لك سقف بالكلمات فاعتمد مجموع الكلمات وتجاهل الحروف، وإذا حُدّد بالحروف فتحقق هل المسافات محسوبة قبل أن تبدأ بالحذف.</p></article>
+<article><h3>كم كلمة تحتاج لكلمة مدتها 5 دقائق؟</h3>
+<p>يتحدث معظم الناس بارتياح بسرعة 130 إلى 150 كلمة في الدقيقة، أي إن حديثًا مدته 5 دقائق يحتاج نحو 650 إلى 750 كلمة. وقد يصل المتحدث السريع إلى 180 كلمة في الدقيقة، أي نحو 900 كلمة في خمس دقائق. تبطّئك الوقفات والشرائح والنكات وتفاعل الجمهور، فخطّط للحد الأدنى.</p>
+<p>الصق نصك في العداد وانظر وقت الإلقاء، ثم اقرأه بصوت عالٍ مرة واحدة مع مؤقّت. إذا اختلف الوقت الفعلي عن التقدير فسجّل الفرق وعدّل الطول المستهدف. الجمل القصيرة أسهل في الإلقاء وأسهل على المستمعين.</p></article>
+<article><h3>كيف تكتشف الكلمات المكررة في كتابتك</h3>
+<p>التكرار من أكثر مشكلات المسودات شيوعًا، ومن الصعب ملاحظته في نصك أنت. الصق مسودتك في العداد وانظر إلى أكثر الكلمات تكرارًا في اللوحة الجانبية. تجاهل أدوات الربط الصغيرة وركّز على الكلمات الدالة التي تعود مرارًا مثل «مهم» و«شيء» و«استخدام».</p>
+<p>استبدل المكرر بكلمات أدق، أو أعد صياغة الجملة بحيث لا تحتاج إلى الكلمة المكررة. ثم اقرأ النص بصوت عالٍ، فالتكرار المزعج أسهل سماعًا من رؤيته. أبقِ على التكرار عمدًا فقط في المصطلحات الأساسية التي يجب أن تبقى ثابتة، كالمصطلح الفني.</p></article></div></div></section>
+  <footer><a href="privacy.html" data-i="privacy"></a><a href="guide.html" data-i="guide"></a><a href="about.html" data-i="about"></a><a href="contact.html" data-i="contact"></a></footer>
+</div>
+
+<script>
+const L = {
+  en: {
+    h1:"Word Counter", sub:"Count words, characters, sentences and reading time instantly",
+    words:"Words", chars:"Characters (with spaces)", charsNo:"Characters (no spaces)",
+    paste:"📋 Paste", copy:"📄 Copy", dl:"💾 Download (.txt)", clear:"🗑️ Clear",
+    ph:"Start typing or paste your text here...", details:"Details",
+    sent:"Sentences:", para:"Paragraphs:", read:"Reading time:", speak:"Speaking time:",
+    top:"Most frequent words", empty:"Type some text to see frequent words...",
+    sec:"sec", min:"min", copied:"Copied to clipboard!", noclip:"Clipboard unavailable, use Ctrl+V",
+    toggle:"العربية", privacy:"Privacy Policy", guide:"Writing Guide", about:"About", contact:"Contact", title:"Word Counter – Free Online Word & Character Count Tool"
+  },
+  ar: {
+    h1:"عداد الكلمات", sub:"احسب الكلمات والحروف والجمل ووقت القراءة فورًا",
+    words:"الكلمات", chars:"الحروف (مع المسافات)", charsNo:"الحروف (بدون مسافات)",
+    paste:"📋 لصق", copy:"📄 نسخ", dl:"💾 تنزيل (.txt)", clear:"🗑️ مسح",
+    ph:"ابدأ الكتابة هنا أو الصق نصك...", details:"التفاصيل",
+    sent:"الجمل:", para:"الفقرات:", read:"وقت القراءة:", speak:"وقت الإلقاء:",
+    top:"أكثر الكلمات تكرارًا", empty:"اكتب نصًا لعرض الكلمات الأكثر تكرارًا...",
+    sec:"ث", min:"د", copied:"تم النسخ إلى الحافظة!", noclip:"تعذر الوصول للحافظة، استخدم Ctrl+V",
+    toggle:"English", privacy:"سياسة الخصوصية", guide:"دليل الكتابة", about:"من نحن", contact:"تواصل معنا", title:"عداد الكلمات والحروف – أداة مجانية لحساب الكلمات"
+  }
+};
+
+const $ = id => document.getElementById(id);
+const t = $('t');
+let lang = 'en';
+
+// اختيار اللغة: التفضيل المحفوظ ثم لغة الجهاز
+function detectLang() {
+  try { const s = localStorage.getItem('lang'); if (s === 'ar' || s === 'en') return s; } catch (e) {}
+  const langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+  return String(langs[0]).toLowerCase().startsWith('ar') ? 'ar' : 'en';
+}
+
+function applyLang(l) {
+  lang = l;
+  const d = L[l];
+  document.documentElement.lang = l;
+  document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+  document.title = d.title;
+  document.querySelectorAll('[data-i]').forEach(el => { el.textContent = d[el.dataset.i]; });
+  document.querySelectorAll('[data-l]').forEach(e => { e.hidden = e.dataset.l !== l; });
+  t.placeholder = d.ph;
+  $('langBtn').textContent = d.toggle;
+  render();
+}
+
+const fmt = n => n.toLocaleString(lang === 'ar' ? 'ar-EG' : 'en-US');
+function fmtTime(s) {
+  const d = L[lang];
+  if (s < 60) return fmt(s) + ' ' + d.sec;
+  return fmt(Math.floor(s / 60)) + ' ' + d.min + ' ' + fmt(s % 60) + ' ' + d.sec;
+}
+
+function render() {
+  const text = t.value;
+  const words = text.match(/[\u0600-\u06FFa-zA-Z0-9_]+/g) || [];
+  const wc = words.length;
+  $('w').textContent = fmt(wc);
+  $('c').textContent = fmt(text.length);
+  $('cn').textContent = fmt(text.replace(/\s/g, '').length);
+  const has = text.trim().length > 0;
+  $('s').textContent = fmt(has ? (text.match(/[^.!?؟\n]+[.!?؟\n]*/g) || []).filter(x => x.trim()).length : 0);
+  $('p').textContent = fmt(has ? text.split(/\n+/).filter(x => x.trim()).length : 0);
+  $('r').textContent = fmtTime(Math.ceil(wc / 275 * 60));
+  $('sp').textContent = fmtTime(Math.ceil(wc / 180 * 60));
+  density(words);
+}
+
+// عرض آمن: textContent فقط بدون innerHTML
+function density(words) {
+  const box = $('dens');
+  box.replaceChildren();
+  if (!words.length) {
+    const li = document.createElement('li');
+    li.className = 'empty';
+    li.textContent = L[lang].empty;
+    box.appendChild(li);
+    return;
+  }
+  const freq = new Map();
+  words.forEach(w => { const k = w.toLowerCase(); if (k.length > 1) freq.set(k, (freq.get(k) || 0) + 1); });
+  [...freq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5).forEach(([word, n]) => {
+    const pct = (n / words.length * 100).toFixed(1);
+    const li = document.createElement('li');
+    const row = document.createElement('div');
+    row.className = 'd-row';
+    const a = document.createElement('span');
+    const b = document.createElement('strong');
+    b.textContent = word;
+    a.append(b, ' (' + fmt(n) + ')');
+    const c = document.createElement('span');
+    c.textContent = pct + '%';
+    row.append(a, c);
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    const f = document.createElement('div');
+    f.className = 'fill';
+    f.style.width = Math.min(100, pct) + '%';
+    bar.appendChild(f);
+    li.append(row, bar);
+    box.appendChild(li);
+  });
+}
+
+// الأزرار
+$('bPaste').addEventListener('click', async () => {
+  try {
+    const txt = await navigator.clipboard.readText();
+    t.value = (t.value + txt).slice(0, 1000000);
+    render();
+  } catch (e) { alert(L[lang].noclip); }
+});
+$('bCopy').addEventListener('click', async () => {
+  if (!t.value) return;
+  try { await navigator.clipboard.writeText(t.value); alert(L[lang].copied); }
+  catch (e) { alert(L[lang].noclip); }
+});
+$('bClr').addEventListener('click', () => { t.value = ''; render(); });
+$('bUp').addEventListener('click', () => { t.value = t.value.toUpperCase(); render(); });
+$('bLow').addEventListener('click', () => { t.value = t.value.toLowerCase(); render(); });
+$('bSen').addEventListener('click', () => {
+  t.value = t.value.toLowerCase().replace(/(^\s*|[.!?]\s+)([a-z])/g, (m, p1, p2) => p1 + p2.toUpperCase());
+  render();
+});
+$('bDl').addEventListener('click', () => {
+  if (!t.value) return;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([t.value], { type: 'text/plain;charset=utf-8' }));
+  a.download = 'document.txt';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+$('langBtn').addEventListener('click', () => {
+  const n = lang === 'ar' ? 'en' : 'ar';
+  try { localStorage.setItem('lang', n); } catch (e) {}
+  applyLang(n);
+});
+t.addEventListener('input', render);
+
+applyLang(detectLang());
+</script>
+</body>
+</html>
